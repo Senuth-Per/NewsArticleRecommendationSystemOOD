@@ -1,0 +1,97 @@
+.backgroundim {
+    -fx-background-image: url("news-2444778_1280.jpg");
+}
+
+.logbtn {
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to bottom left, mediumslateblue, darkslateblue);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);
+}
+
+.redbtn {
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to bottom left, orangered, darkred);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);
+}
+
+.logbtn:hover {
+    -fx-background-color: linear-gradient(to bottom left, darkslateblue, mediumpurple);
+}
+
+.redbtn:hover {
+    -fx-background-color: linear-gradient(to bottom left, darkred, orangered);
+}
+
+
+.navbar {
+    -fx-background-color: linear-gradient(to bottom left, #11115c, #008080);
+}
+
+.hometopic {
+    -fx-background-color: linear-gradient(to bottom left, deepskyblue, darkslategray);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);
+}
+
+.projectbtn {
+    -fx-background-color: linear-gradient(to bottom left, olivedrab, palegreen);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.topicPane {
+    -fx-background-radius: 10px;
+    -fx-background-color: MediumAquaMarine ;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 0);
+}
+
+.userhomePane {
+    -fx-background-color: linear-gradient(to bottom left, darkmagenta, rosybrown);
+}
+.eneterbtn {
+    -fx-background-color: linear-gradient(to bottom left, chocolate, sandybrown);
+    -fx-font-weight: bold;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.eneterbtn:hover {
+    -fx-background-color: #9fd840;
+}
+
+.tablePane {
+    -fx-background-color: tan;
+}
+
+.delbtn {
+    -fx-background-color: crimson;
+    -fx-font-weight: bold;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.delbtn:hover {
+    -fx-background-color: #fa7171;
+}
+.dashboardBtn {
+    -fx-background-color: #F0E68C;
+    -fx-font-weight: bold;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.dashboardBtn:hover {
+    -fx-background-color: yellow;
+}
+
+.chart-axis {
+    -fx-tick-label-font-size: 15px;
+    -fx-tick-label-fill: black;
+}
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
