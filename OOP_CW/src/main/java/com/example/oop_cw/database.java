@@ -86,8 +86,8 @@ public class database {
         articlesCollection.insertOne(doc);
     }
 
-    public static List<Admin_articles> getAllArticles() {
-        MongoCollection<Document> articlesCollection = database.getCollection("articles");
+    public static List<Admin_articles> fetchAdminArticles() {
+        MongoCollection<Document> articlesCollection = database.getCollection("Admin_Articles");
         List<Admin_articles> articles = new ArrayList<>();
 
         for (Document doc : articlesCollection.find()) {
@@ -103,7 +103,6 @@ public class database {
 
         return articles;
     }
-
 
     public static void deleteArticle(Admin_articles article) {
         MongoCollection<Document> articlesCollection = database.getCollection("articles");

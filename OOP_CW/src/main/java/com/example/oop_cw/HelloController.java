@@ -218,18 +218,32 @@ public class HelloController {
         AdminViewAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
         AdminViewDate.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        // Load articles from storage
-        loadArticles();
+        // Load articles into the TableView
+        reloadAdminArticles();
 
 
     }
-    public void loadArticles() {
-        List<Admin_articles> loadedArticles = database.getAllArticles(); // Fetch from DB or file
+    public void reloadAdminArticles() {
+        try {
+            // Fetch all admin-posted articles
+            List<Admin_articles> loadedArticles = database.fetchAdminArticles();
 
-        ObservableList<Admin_articles> articleList = FXCollections.observableArrayList(loadedArticles);
+            if (loadedArticles == null || loadedArticles.isEmpty()) {
+                System.out.println("No articles found in the database.");
+                return;
+            }
 
-        // Set items in the table view to display loaded articles
-        AdminViewPostNewsTabla.setItems(articleList);
+            // Convert the list to an ObservableList
+            ObservableList<Admin_articles> articleList = FXCollections.observableArrayList(loadedArticles);
+
+            // Bind the ObservableList to the TableView
+            AdminViewPostNewsTabla.setItems(articleList);
+
+            System.out.println("Articles reloaded into TableView: " + articleList.size());
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Loading Error", "Failed to reload articles", e.getMessage());
+        }
     }
 
 
