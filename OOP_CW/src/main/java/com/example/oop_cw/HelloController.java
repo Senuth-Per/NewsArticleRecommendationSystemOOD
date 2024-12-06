@@ -197,7 +197,7 @@ public class HelloController {
     private final String ADMIN_CODE = "Admin1234";
     public static String currentUsername;
 
-
+    // OOP Concept: Abstraction
     // Helper method to show alerts
     private void showAlert(Alert.AlertType type, String title, String header, String content) {
         Alert alert = new Alert(type);
@@ -212,6 +212,8 @@ public class HelloController {
         // Initially display Home pane with LogIn Navigator
         showMainPane(paneHome, PaneLogInNavigator);
 
+        // OOP Concept: Polymorphism
+        // Use of `PropertyValueFactory` to dynamically bind table columns to class properties.
         AdminViewTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         AdminViewDes.setCellValueFactory(new PropertyValueFactory<>("description"));
         AdminViewURL.setCellValueFactory(new PropertyValueFactory<>("url"));
@@ -221,8 +223,9 @@ public class HelloController {
         // Load articles into the TableView
         reloadAdminArticles();
 
-
     }
+    // OOP Concept: Encapsulation and Abstraction
+    // Handles fetching articles from the database and binding them to the UI.
     public void reloadAdminArticles() {
         try {
             // Fetch all admin-posted articles
@@ -760,6 +763,7 @@ public class HelloController {
 
     @FXML
     public void GetRecommendations(ActionEvent event) {
+        // OOP Concept: Concurrency
         String currentUser = HelloController.currentUsername;
         ExecutorService executor = Executors.newCachedThreadPool();
 
