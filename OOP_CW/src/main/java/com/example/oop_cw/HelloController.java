@@ -839,6 +839,78 @@ public class HelloController {
         intersection.retainAll(unratedKeywords);
         return intersection.size(); // Simple count of common keywords
     }
+    @FXML
+    public void PostNews(ActionEvent event) {
+        // Retrieve input values from the text fields
+        String title = AdminTitleInput.getText();
+        String url = AdminURLInput.getText();
+        String description = AdminDesInput.getText();
+        String date = AdminDateInput.getText();
+        String author = AdminAuthorInput.getText();// Author input
+        String content = AdminConInput.getText();
+
+        // Validate input fields
+        if (title.isEmpty() || url.isEmpty() || description.isEmpty() || content.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Input Error", "Please fill in all fields", "All fields are required to post news.");
+            return;
+        }
+
+        // Create an Article object
+        Admin_articles article = new Admin_articles(title, url, description, date, author, content);
+
+        // Save the article to the database
+        database.AdminSaveArticle(article);
+
+        // Add to the ListView and TableView for immediate UI update
+        NewsListView.getItems().add(title);
+        AdminViewPostNewsTabla.getItems().add(article);
+
+        // Clear input fields
+        AdminTitleInput.clear();
+        AdminURLInput.clear();
+        AdminDesInput.clear();
+        AdminDateInput.clear();
+        AdminAuthorInput.clear();
+        AdminConInput.clear();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("News Posted Successfully");
+        alert.setContentText("The news article has been posted and saved.");
+
+    }
+
+
+    @FXML
+    public void AdminDelNews(ActionEvent event) {
+        // Get the selected article from the TableView
+        Admin_articles selectedArticle = (Admin_articles) AdminViewPostNewsTabla.getSelectionModel().getSelectedItem();
+
+        if (selectedArticle == null) {
+            showAlert(Alert.AlertType.WARNING, "No Selection", "No Article Selected", "Please select an article to delete.");
+            return;
+        }
+
+        // Show confirmation dialog
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Confirmation");
+        alert.setHeaderText("Are you sure you want to delete this article?");
+        alert.setContentText("Title: " + selectedArticle.getTitle());
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // Delete the article from the database
+            database.deleteArticle(selectedArticle);
+
+            // Remove from the TableView and ListView
+            AdminViewPostNewsTabla.getItems().remove(selectedArticle);
+            NewsListView.getItems().remove(selectedArticle.getTitle());
+
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Article Deleted", "The article has been deleted successfully.");
+        } else {
+            showAlert(Alert.AlertType.INFORMATION, "Cancelled", "Article Not Deleted", "The deletion was cancelled.");
+        }
+    }
 
     
 
