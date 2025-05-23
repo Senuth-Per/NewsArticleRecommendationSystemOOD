@@ -5,12 +5,23 @@ A personalized news recommendation system designed to deliver relevant article s
 
 ## 🚀 Features
 
-- User Registration & Authentication: A secure sign-up and login system to personalize the user experience.
-- Article Fetching: Dynamically retrieves the latest news articles for users to browse and rate.
-- Rating & Feedback Submission: Users can rate articles (1-5 stars) and provide feedback to help improve future recommendations.
-- Recommendation Engine: Prioritizes and suggests articles based on relevance, user interests, and keyword analysis.
-- Real-time Personalization: Captures user interactions on-the-fly to continuously improve the accuracy of recommendations.
-- Keyword Extraction: Automatically identifies key topics from articles and user feedback to fine-tune preferences.
+- User Registration & Authentication
+  A secure sign-up and login system to personalize the user experience.
+  
+- Article Fetching
+  Dynamically retrieves the latest news articles for users to browse and rate.
+  
+- Rating & Feedback Submission
+  Users can rate articles (1-5 stars) and provide feedback to help improve future recommendations.
+  
+- Recommendation Engine
+  Prioritizes and suggests articles based on relevance, user interests, and keyword analysis.
+  
+- Real-time Personalization
+  Captures user interactions on-the-fly to continuously improve the accuracy of recommendations.
+  
+- Keyword Extraction
+  Automatically identifies key topics from articles and user feedback to fine-tune preferences.
   
 ## 🛠️ Technologies Used
 
