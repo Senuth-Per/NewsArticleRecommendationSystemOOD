@@ -30,3 +30,15 @@ A personalized news recommendation system designed to deliver relevant article s
 - Users can rate and submit feedback on articles.
 - The recommendation engine analyzes interaction history and keywords.
 - Tailored article suggestions are generated and updated in real time.
+
+## 📸 User Interface
+
+Here’s a preview of the application's main dashboard:
+
+![News Recommendation Home](https://github.com/Senuth-Per/NewsArticleRecommendationSystemOOD/blob/3490ed8cf025f1bfa0fad1b700cab54218bb55ac/Images%20_of%20_the%20_Interface/Home%20page.png)
+
+![News Recommendation User Registration](https://github.com/Senuth-Per/NewsArticleRecommendationSystemOOD/blob/3490ed8cf025f1bfa0fad1b700cab54218bb55ac/Images%20_of%20_the%20_Interface/Registration.png)
+
+![News Recommendation User Home](https://github.com/Senuth-Per/NewsArticleRecommendationSystemOOD/blob/3490ed8cf025f1bfa0fad1b700cab54218bb55ac/Images%20_of%20_the%20_Interface/User%20home.png)
+
+![News Recommendation Admin Home](https://github.com/Senuth-Per/NewsArticleRecommendationSystemOOD/blob/3490ed8cf025f1bfa0fad1b700cab54218bb55ac/Images%20_of%20_the%20_Interface/Admin%20home.png)
